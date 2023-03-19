@@ -1,0 +1,17 @@
+<h1>Send SMS</h1>
+
+<%= form_with url: sms_path, method: :post do |f| %>
+  <%= f.label :to %>
+  <%= f.text_field :to %>
+
+  <%= f.label :message %>
+  <%= f.text_area :message, name: "message" %>
+
+  <%= f.label :from %>
+  <%= f.text_field :from %>
+
+  <%= f.label :enqueue %>
+  <%= f.check_box :enqueue %>
+
+  <%= f.submit "Send SMS", formaction: sms_path, formmethod: :post %>
+<% end %>
